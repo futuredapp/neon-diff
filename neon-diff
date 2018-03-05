@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+foreach (array(__DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.php', __DIR__ . '/vendor/autoload.php') as $file) {
+  if (file_exists($file)) {
+    require_once $file;
+    break;
+  }
+}
+
+if ($argc != 3) {
+  printf('Invalid parameter count!' . PHP_EOL . PHP_EOL);
+  printf('Usage: neon-diff template neon' . PHP_EOL);
+  exit(-1);
+}
+
+try {
+  $neonDiff = new \NeonDiff\NeonDiff;
+  $neonDiff->setTemplateFile($argv[1]);
+  $neonDiff->setIniFile($argv[2]);
+  $neonDiff->diff();
+} catch (\NeonDiff\NeonDiffException $nde) {
+  echo $nde->getMessage();
+  exit(-1);
+}
+

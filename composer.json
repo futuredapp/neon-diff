@@ -1,0 +1,29 @@
+{
+  "name": "thefuntasty/neon-diff",
+  "description": "PHP library to compare Neon file against a template",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/thefuntasty/neon-diff",
+  "authors": [
+    {
+      "name": "Radim Vaculik",
+      "email": "radim.vaculik@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "nette/neon": "^2.4"
+  },
+  "autoload": {
+    "classmap": [
+      "src/",
+      "tests/"
+    ]
+  },
+  "bin": [
+    "neon-diff"
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^6.5"
+  }
+}
