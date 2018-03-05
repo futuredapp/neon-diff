@@ -17,7 +17,7 @@ if ($argc != 3) {
 try {
   $neonDiff = new \NeonDiff\NeonDiff;
   $neonDiff->setTemplateFile($argv[1]);
-  $neonDiff->setIniFile($argv[2]);
+  $neonDiff->setNeonFile($argv[2]);
   $neonDiff->diff();
 } catch (\NeonDiff\NeonDiffException $nde) {
   echo $nde->getMessage();
