@@ -32,7 +32,7 @@ class NeonDiff
     if (is_array($templateValue)) {
       foreach ($templateValue as $k => $v) {
         if (!array_key_exists($k, $neonValue)) {
-          throw new NeonDiffException(sprintf('Key `%s` is missing in neon file!' . PHP_EOL, $templateKey));
+          throw new NeonDiffException(sprintf('Key `%s` is missing in neon file!' . PHP_EOL, $k));
         }
         $this->diffArray($k, $v, $neonValue[$k]);
       }
