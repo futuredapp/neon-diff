@@ -27,7 +27,7 @@ class NeonDiff
   /**
    * @throws NeonDiffException
    */
-  private function diffArray($templateKey, $templateValue, $neonValue)
+  private function diffArray($templateKey, $templateValue, $neonValue): void
   {
     if (is_array($templateValue)) {
       foreach ($templateValue as $k => $v) {
@@ -57,7 +57,7 @@ class NeonDiff
   /**
    * @throws NeonDiffException
    */
-  public function setNeonFile(string $neonFile)
+  public function setNeonFile(string $neonFile): void
   {
     if (!($this->neon = Neon::decode(file_get_contents($neonFile)))) {
       throw new NeonDiffException(sprintf('Invalid Neon file!' . PHP_EOL));
@@ -67,7 +67,7 @@ class NeonDiff
   /**
    * @throws NeonDiffException
    */
-  public function setTemplateFile(string $templateFile)
+  public function setTemplateFile(string $templateFile): void
   {
     if (!($this->template = Neon::decode(file_get_contents($templateFile)))) {
       throw new NeonDiffException(sprintf('Invalid template file!' . PHP_EOL));
